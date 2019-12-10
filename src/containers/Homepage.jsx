@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-class Calendar extends Component {
+class Homepage extends Component {
   state = {};
   render() {
-    return <div>Calendar</div>;
+    return <div>Homepage</div>;
   }
 }
 
-export default Calendar;
+export default Homepage;
