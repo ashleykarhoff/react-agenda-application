@@ -1,12 +1,12 @@
 import React from "react";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 import "./App.css";
 import Homepage from "./containers/Homepage";
 import AgendaForm from "./containers/AgendaForm";
 import Agenda from "./containers/Agenda";
 import Signup from "./containers/Signup";
 import ErrorPage from "./components/ErrorPage";
-import Login from "./components/Login";
+import Login from "./containers/Login";
 
 class App extends React.Component {
   state = {};

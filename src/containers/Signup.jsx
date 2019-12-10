@@ -6,7 +6,8 @@ class Signup extends React.Component {
     lastName: "",
     email: "",
     password: "",
-    passwordConfirmation: ""
+    passwordConfirmation: "",
+    redirect: false
   };
 
   onChange = e => {
@@ -30,58 +31,48 @@ class Signup extends React.Component {
       })
     })
       .then(resp => resp.json())
-      .then(console.log);
+      .then(json => this.setState({ redirect: json.redirect }));
   };
 
   render() {
     return (
       <React.Fragment>
-        <form action="">
-          <label>
-            First name:
-            <input
-              type="text"
-              name="firstName"
-              value={this.state.firstName}
-              onChange={this.onChange}
-            />
-          </label>
-          <label>
-            Last name:
-            <input
-              type="text"
-              name="lastName"
-              value={this.state.lastName}
-              onChange={this.onChange}
-            />
-          </label>
-          <label>
-            Email:
-            <input
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={this.onChange}
-            />
-          </label>
-          <label>
-            Password:
-            <input
-              type="password"
-              name="password"
-              value={this.state.password}
-              onChange={this.onChange}
-            />
-          </label>
-          <label>
-            Confirm password:
-            <input
-              type="password"
-              name="passwordConfirmation"
-              value={this.state.passwordConfirmation}
-              onChange={this.onChange}
-            />
-          </label>
+        <form>
+          <input
+            type="text"
+            placeholder="First name"
+            name="firstName"
+            value={this.state.firstName}
+            onChange={this.onChange}
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            name="lastName"
+            value={this.state.lastName}
+            onChange={this.onChange}
+          />
+          <input
+            type="text"
+            placeholder="Email address"
+            name="email"
+            value={this.state.email}
+            onChange={this.onChange}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={this.state.password}
+            onChange={this.onChange}
+          />
+          <input
+            type="password"
+            placeholder="Confirm password"
+            name="passwordConfirmation"
+            value={this.state.passwordConfirmation}
+            onChange={this.onChange}
+          />
           <button onClick={this.handleSubmit}>Submit</button>
         </form>
       </React.Fragment>

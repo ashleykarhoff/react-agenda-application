@@ -6,8 +6,7 @@ class Homepage extends Component {
   state = {};
   render() {
     return (
-      <div>
-        Homepage
+      <div className="homepage-container">
         <Calendar />
         <Agendas />
       </div>
